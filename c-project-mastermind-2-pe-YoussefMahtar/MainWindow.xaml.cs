@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
         string codeString = "";
         int sec = 0;
         int score = 100;
+        string[] highScore = new string[15];
+        string playerName = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -461,10 +464,12 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
         private void startGame()
         {
             string antwoord = Interaction.InputBox("Geef de PlayerName in!", "PlayerName", "PlayerName", 500);
+            playerName = antwoord;
             while (string.IsNullOrEmpty(antwoord))
             {
                 MessageBox.Show("Geef een Naam in!", "Foutieve invoer");
                 antwoord = Interaction.InputBox("Geef de PlayerName in!", "PlayerName", "PlayerName", 500);
+                playerName = antwoord;
             }
         }
 
@@ -484,6 +489,11 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
                 antwoord = Interaction.InputBox("Geef een getal tussen 3 - 20!", "Pogingen aanpassen", "", 500);
                 maxAttempts = Convert.ToInt32(antwoord);
             }
+        }
+
+        private void MnuHighscore_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"{playerName} - {attempts}/{maxAttempts} - {score}", "Mastermind Highscore", MessageBoxButton.OK, MessageBoxImage.None);
         }
     }
 }

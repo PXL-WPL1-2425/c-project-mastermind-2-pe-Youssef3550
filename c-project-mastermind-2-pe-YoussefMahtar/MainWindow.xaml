@@ -10,7 +10,7 @@
         <Menu Height="20" VerticalAlignment="Top">
             <MenuItem x:Name="MnuBestand" Header="Bestand">
                 <MenuItem x:Name="MnuNieuwSpel" Header="Nieuw Spel" Click="MnuNieuwSpel_Click"></MenuItem>
-                <MenuItem x:Name="MnuHighscore" Header="Highscores"></MenuItem>
+                <MenuItem x:Name="MnuHighscore" Header="Highscores" Click="MnuHighscore_Click"></MenuItem>
                 <MenuItem x:Name="MnuAfluiten" Header="Afsluiten" Click="MnuAfluiten_Click"></MenuItem>
             </MenuItem>
             <MenuItem x:Name="MnuInstellingen" Header="Instellingen">
