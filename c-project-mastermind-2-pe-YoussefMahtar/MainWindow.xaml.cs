@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -397,6 +398,8 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
 
         private void nieuwSpel()
         {
+            startGame();
+
             sec = 0;
             attempts = 1;
             score = 100;
@@ -447,6 +450,16 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
         private void MnuAfluiten_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void startGame()
+        {
+            string antwoord = Interaction.InputBox("Geef de PlayerName in!", "PlayerName", "PlayerName", 500);
+            while (string.IsNullOrEmpty(antwoord))
+            {
+                MessageBox.Show("Geef een Naam in!", "Foutieve invoer");
+                antwoord = Interaction.InputBox("Geef de PlayerName in!", "PlayerName", "PlayerName", 500);
+            }
         }
     }
 }
