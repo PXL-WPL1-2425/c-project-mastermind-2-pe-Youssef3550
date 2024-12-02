@@ -14,7 +14,7 @@
                 <MenuItem x:Name="MnuAfluiten" Header="Afsluiten" Click="MnuAfluiten_Click"></MenuItem>
             </MenuItem>
             <MenuItem x:Name="MnuInstellingen" Header="Instellingen">
-                <MenuItem x:Name="MnuAantalPoging" Header="Aantal pogingen"></MenuItem>
+                <MenuItem x:Name="MnuAantalPoging" Header="Aantal pogingen" Click="MnuAantalPoging_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <ComboBox x:Name="ComboBox1" HorizontalAlignment="Left" Height="25" Margin="94,68,0,0" VerticalAlignment="Top" Width="186" SelectionChanged="ComboBox_SelectionChanged"/>

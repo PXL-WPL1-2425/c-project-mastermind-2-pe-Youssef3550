@@ -25,6 +25,7 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
         DispatcherTimer timer = new DispatcherTimer();
         private List<string> code;
         int attempts = 1;
+        int maxAttempts = 10;
         string codeString = "";
         int sec = 0;
         int score = 100;
@@ -368,7 +369,7 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
         {
             this.Title = $"Mastermind Attempt: {attempts}";
 
-            if (attempts > 10)
+            if (attempts > maxAttempts)
             {
                 var result = MessageBox.Show($"You failed! De correcte code was {codeString}." +
                     $"Nog eens proberen?", "FAILED"
@@ -445,7 +446,7 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Wilt u het spel vroegtijdig beëindigen?", $"Poging {attempts}/10", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            MessageBoxResult result = MessageBox.Show("Wilt u het spel vroegtijdig beëindigen?", $"Poging {attempts}/{maxAttempts}", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;
@@ -464,6 +465,24 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
             {
                 MessageBox.Show("Geef een Naam in!", "Foutieve invoer");
                 antwoord = Interaction.InputBox("Geef de PlayerName in!", "PlayerName", "PlayerName", 500);
+            }
+        }
+
+        private void MnuAantalPoging_Click(object sender, RoutedEventArgs e)
+        {
+            string antwoord = Interaction.InputBox("Geef een getal tussen 3 - 20!", "Pogingen aanpassen", "", 500);
+            maxAttempts = Convert.ToInt32(antwoord);
+            while (string.IsNullOrEmpty(antwoord))
+            {
+                MessageBox.Show("Geef getal!", "Foutieve invoer");
+                antwoord = Interaction.InputBox("Geef een getal tussen 3 - 20!", "Pogingen aanpassen", "", 500);
+                maxAttempts = Convert.ToInt32(antwoord);
+            }
+            while (maxAttempts < 3 || maxAttempts > 20)
+            {
+                MessageBox.Show("Geef getal!", "Foutieve invoer");
+                antwoord = Interaction.InputBox("Geef een getal tussen 3 - 20!", "Pogingen aanpassen", "", 500);
+                maxAttempts = Convert.ToInt32(antwoord);
             }
         }
     }
