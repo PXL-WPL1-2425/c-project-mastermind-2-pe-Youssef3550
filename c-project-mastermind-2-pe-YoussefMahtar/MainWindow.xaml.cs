@@ -254,10 +254,7 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
                 {
                     nieuwSpel();
                 }
-                else if (result == MessageBoxResult.No)
-                {
-                    this.Close();
-                }
+                
             }
         }
 
@@ -380,10 +377,6 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
                 {
                     nieuwSpel();
                 }
-                else
-                {
-                    this.Close();
-                }
             }
         }
 
@@ -416,7 +409,17 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
             updateLabels();
             TextBoxCode();
             Attempts();
+            updateWrapPanels();
         }
+
+        private void updateWrapPanels()
+        {
+            WrapPanel1.Children.Clear();
+            WrapPanel2.Children.Clear();
+            WrapPanel3.Children.Clear();
+            WrapPanel4.Children.Clear();
+        }
+
         private void updateLabels()
         {
             Label1.BorderBrush = Brushes.Transparent;
@@ -439,6 +442,11 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
             {
                 e.Cancel = true;
             }
+        }
+
+        private void MnuAfluiten_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

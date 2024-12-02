@@ -8,13 +8,13 @@
             Title="MasterMind - Youssef Mahtar" Height="450" Width="800" Closing="Window_Closing" KeyDown="textBoxCode_KeyDown">
     <Grid Background="LightGray">
         <Menu Height="20" VerticalAlignment="Top">
-            <MenuItem Header="Bestand">
-                <MenuItem Header="Nieuw Spel"></MenuItem>
-                <MenuItem Header="Highscores"></MenuItem>
-                <MenuItem Header="Afsluiten"></MenuItem>
+            <MenuItem x:Name="MnuBestand" Header="Bestand">
+                <MenuItem x:Name="MnuNieuwSpel" Header="Nieuw Spel"></MenuItem>
+                <MenuItem x:Name="MnuHighscore" Header="Highscores"></MenuItem>
+                <MenuItem x:Name="MnuAfluiten" Header="Afsluiten" Click="MnuAfluiten_Click"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Instellingen">
-                <MenuItem Header="Aantal pogingen"></MenuItem>
+            <MenuItem x:Name="MnuInstellingen" Header="Instellingen">
+                <MenuItem x:Name="MnuAantalPoging" Header="Aantal pogingen"></MenuItem>
             </MenuItem>
         </Menu>
         <ComboBox x:Name="ComboBox1" HorizontalAlignment="Left" Height="25" Margin="94,68,0,0" VerticalAlignment="Top" Width="186" SelectionChanged="ComboBox_SelectionChanged"/>
