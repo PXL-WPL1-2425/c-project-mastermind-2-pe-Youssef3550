@@ -36,6 +36,7 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
             TextBoxCode();
             Attempts();
             showScore();
+            startGame();
 
             timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Tick += startCountdown;
@@ -413,6 +414,10 @@ namespace c_project_mastermind_2_pe_YoussefMahtar
             TextBoxCode();
             Attempts();
             updateWrapPanels();
+        }
+        private void MnuNieuwSpel_Click(object sender, RoutedEventArgs e)
+        {
+            nieuwSpel();
         }
 
         private void updateWrapPanels()
